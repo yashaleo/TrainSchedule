@@ -1,10 +1,19 @@
 <html>
   <head>
+
+        <!-- Firebase and Javascrip -->
+
+     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-database.js"></script>
+   
     <!--Import Google Icon Font-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
     <!--Import materialize.css-->
     <link
       rel="stylesheet"
@@ -13,12 +22,119 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+    <link rel="stylesheet" href="assets/css/style.css" />
 
+
+  </head>
+  <!-- Header & Img Carousel -->
   <body>
     <div class="container"></div>
+    <div class="row">
+      <h1 class="center-align blue darken-3">Train Schedule</h1>
+      <div class="carousel carousel-slider">
+        <a class="carousel-item"
+          ><img src="https://picsum.photos/id/1026/4000/2000"
+        /></a>
+        <a class="carousel-item"
+          ><img src="https://picsum.photos/id/363/4000/2000"
+        /></a>
+        <a class="carousel-item"
+          ><img src="https://picsum.photos/id/233/4000/2000"
+        /></a>
+        <a class="carousel-item"
+          ><img src="https://picsum.photos/id/524/4000/2000"
+        /></a>
+      </div>
+      <h2 class="center-align blue darken-3">Best Way to Travel!</h2>
+
+      <!-- Clock -->
+      <div id="clock" class="center-align"></div>
+
+      <!-- Train Schedule -->
+      <h4 class="center-align blue darken-4">
+        Current Train Schedule
+      </h4>
+
+      <table class="striped blue darken-3" id="trainTable">
+        <thead>
+          <tr>
+            <th>Train Name</th>
+            <th>Destination</th>
+            <th>Frequency (min)</th>
+            <th>Next Arrival</th>
+            <th>Minutes Away</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h5 class="center-align blue darken-4">
+      Enter New Train Details
+    </h5>
+    <!-- Adding New Trains -->
+
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input
+              placeholder="Train Name"
+              id="trainNameInput"
+              type="text"
+              class="validate"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input
+              placeholder="Destination"
+              id="destinationInput"
+              type="text"
+              class="validate"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input
+              placeholder="First Train Time (HH:mm)"
+              id="firstTrainInput"
+              type="text"
+              class="validate"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input
+              placeholder="Frequency(min)"
+              id="frequencyInput"
+              type="text"
+              class="validate"
+            />
+          </div>
+        </div>
+        <button
+          class="btn waves-effect blue darken-3 waves-light"
+          type="submit"
+          name="action"
+          id="submit"
+        >
+          Submit
+          <i class="material-icons right">train</i>
+        </button>
+      </form>
+    </div>
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
   </body>
 </html>
